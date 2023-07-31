@@ -17,9 +17,18 @@
     <link rel="stylesheet" href="css/YouTubePopUp.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <audio autoplay src="audio/ThousandYears.mp3"></audio>
 
+<audio id="miAudio" src="audio/ThousandYears.mp3" loop></audio>
+
+<script>
+  document.body.addEventListener("click", function() {
+    var miAudio = document.getElementById("miAudio");
+    miAudio.play();
+    document.body.removeEventListener("click", arguments.callee);
+  });
+</script>
+
+<body>
     <!-- Preloader -->
     <div class="preloader">
         <div class="lds-heart">
