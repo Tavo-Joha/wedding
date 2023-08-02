@@ -28,6 +28,24 @@
   });
 </script>
 
+<script>
+    // Obtenemos una referencia a la imagen y al archivo de audio
+    const imagen = document.getElementById('miImagen');
+    const audio = new Audio('audio/SayYouWontLetGo.mp3');
+    // Añadimos un evento clic a la imagen
+    imagen.addEventListener('click', function() {
+        // Verificamos si el audio está pausado, si es así, lo iniciamos
+        if (audio.paused) {
+            audio.play();
+        } else {
+            // Si el audio ya está reproduciéndose y hacemos clic nuevamente, lo pausamos
+            audio.pause();
+            // Redireccionamos a "index.html" después de pausar el audio
+            redirectToIndex();
+        }
+    });
+</script>
+
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -46,10 +64,11 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo-wrapper navbar-brand valign">
-                <div class="logo">
-                    <!-- <img src="images/logo-light.png" class="logo-img" alt=""> -->
-                    <a href="index.html"><h2>Gustavo &amp; Johanna</h2></a>
-                </div>
+                <img src="images/audio.png" alt="Imagen" id="miImagen">&nbsp;&nbsp;
+                    <div class="logo">
+                        <!-- <img src="images/logo-light.png" class="logo-img" alt=""> -->
+                        <a href="index.html"><h2>Gustavo &amp; Johanna</h2></a>
+                    </div>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
             <!-- Navbar links -->
